@@ -1,0 +1,32 @@
+{
+  "name": "symmetric",
+  "version": "0.0.1",
+  "description": "A symmetric columns tool",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "gulp ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matheuslc/symmetric.git"
+  },
+  "keywords": [
+    "semmetric",
+    "columns",
+    "equalizer"
+  ],
+  "author": "Matheus Carmo (matheuslc)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheuslc/symmetric/issues"
+  },
+  "homepage": "https://github.com/matheuslc/symmetric",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-connect": "^2.2.0",
+    "gulp-jshint": "^1.9.0"
+  }
+}
