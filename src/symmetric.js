@@ -7,6 +7,7 @@
 
 
 ;(function(window, undefined) {
+  'use strict';
 
   // @namespace SYMMETRIC
 

@@ -1,0 +1,70 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0 20px;
+  background-color: #ecf0f1;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/*
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.products {
+  width: 100%;
+  clear: both;
+  text-align: center;
+  color: #fff;
+}
+
+.products h1 {
+  margin-top: 0;
+}
+
+.product-item {
+  float: left;
+  width: 24.5%;
+  margin: .25%;
+  padding: 20px 10px;
+  background-color: #e74c3c;
+}
+
+.the-show {
+  width: 100%;
+  float: left;
+}
+
+.active-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  background-color: #c0392b;
+  border: 2px solid #fff;
+  outline: 0;
+}
