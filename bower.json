@@ -1,0 +1,33 @@
+{
+  "name": "symmetric",
+  "version": "0.0.1",
+  "homepage": "https://github.com/matheuslc/symmetric",
+  "authors": [
+    "Matheus Lucca do Carmo (matheuslc)"
+  ],
+  "description": "Equalize the columns height, don't break the layout.",
+  "main": "symmetric.min.js",
+  "keywords": [
+    "Symmetric",
+    "equalize",
+    "columns",
+    "break"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    ".bower.json",
+    ".editorconfig",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "LICENSE/",
+    "README.md",
+    "gulpfile.js",
+    "package.json"
+  ]
+}
