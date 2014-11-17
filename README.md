@@ -25,7 +25,7 @@ bower install symmetric
 <section data-symmetric>
   <div data-symmetric-item>
     <p>Lorem ipsum dolor sit amet</p>
-  </di>v
+  </div>
 </section>
 ```
 
