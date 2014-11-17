@@ -26,12 +26,12 @@
   }
 
   /* Get all elements that will be equalized
-   * @param item {string} Class name
+   * @param klass {string} Class name
    * @return items {NodeList} NodeList with all elements
    */
-  _.getWatchers = function(item) {
+  _.getWatchers = function(klass) {
 
-    var item  = item,
+    var item  = klass,
         items = '';
 
     if(typeof item === 'undefined') {
