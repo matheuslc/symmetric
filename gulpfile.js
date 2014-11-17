@@ -9,7 +9,7 @@ gulp.task('server', function() {
 
 gulp.task('ci', function() {
   return gulp.src([
-    'src/scripts/*',
+    'src/*',
   ])
   .pipe(jshint())
   .pipe(jshint.reporter('default', { verbose: true }))
