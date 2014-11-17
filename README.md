@@ -14,12 +14,12 @@ If you have a columns height problem, use me!
 
 ## Example
 
-´´´bash
+```html
 <section data-symmetric>
   <div data-symmetric-item>
     <p>Lorem ipsum dolor sit amet</p>
   </di>v
-mma</section>
-´´´
+</section>
+```
 
 [See an example](http://matheuslc.com/symmetric/examples/)
