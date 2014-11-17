@@ -7,6 +7,13 @@ If you have a columns height problem, use me!
 
 ## How to use
 
+With bower
+
+```bash
+bower install symmetric
+```
+
+
 * Download symmetric.min.js (minified)
 * Put data-symmetric in your wrapper element
 * Put data-symmetric-item on the items that will be equalized
