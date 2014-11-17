@@ -12,9 +12,11 @@
       if(_active === false ) {
         symmetric.removeAttribute('data-symmetric');
         symmetric.removeAttribute('style');
+        el.innerHTML = 'Activate Symmetryc!';
         _active = true;
       } else {
         symmetric.setAttribute('data-symmetric', 'true');
+        el.innerHTML = 'Deactivate Symmetryc!';
         window.SYMMETRIC.init();
         _active = false;
       }
