@@ -6,7 +6,7 @@
 */
 
 
-;(function(window, undefined) {
+;(function(window, document, undefined) {
   'use strict';
 
   // @namespace SYMMETRIC
@@ -51,52 +51,32 @@
    * @return lastHeight {integer} The max height value
    */
   _.getMaxHeight = function(list) {
-    var size       = list.length,
-        lastHeight = 0,
-        i          = 0,
-        auxHeight  = 0;
+    var heights = Array.prototype.map.call( list, function( item ) {
+      return item.offsetHeight;
+    });
 
-    for(i; i < size; i++) {
-      auxHeight = list[i].offsetHeight;
-
-      if(lastHeight < auxHeight ) {
-        lastHeight = auxHeight;
-      }
-
-    }
-
-    return lastHeight;
-
+    return Math.max.apply( Math, heights );
   }
 
   /* Set the height of all elements
    * @param list {NodeList} NodeList with all items (_.getWatchers)
    */
   _.setWatchersHeight = function(list) {
-    var size = list.length,
-        i    = 0;
-
-    for(i; i < size; i++) {
-      list[i].style.height = 'inherit';
-    }
-
+    Array.prototype.map.call( list, function( item ) {
+      item.style.height = 'inherit';
+    });
   }
 
   /* Set the height of root elements
    * @param height {integer} Max height value (_.getMaxHeight())
    */
   _.setHeight = function(height) {
-    var items = document.querySelectorAll('[data-symmetric]'),
-        i     = 0,
-        size  = items.length;
-
-    for(i; i < size; i++) {
-      items[i].style.height = height + 'px';
-    }
-
+    Array.prototype.map.call( document.querySelectorAll('[data-symmetric]'), function( item ) {
+      item.style.height = height + 'px';
+    });
   }
 
   _.init();
 
-}(window, undefined));
+}(window, document, undefined));
 
