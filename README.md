@@ -2,7 +2,7 @@ Symmetric
 =========
 [![Build Status](https://travis-ci.org/matheuslc/symmetric.svg)](https://travis-ci.org/matheuslc/symmetric)
 
-If you have problemns with the height of its columns, use me.
+If you have problems with the height of its columns, use it!
 
 
 ## How to use
