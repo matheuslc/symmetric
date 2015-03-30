@@ -9,7 +9,7 @@
         _active   = false;
 
     el.addEventListener('click', function() {
-      if(_active === false ) {
+      if (_active === false) {
         symmetric.removeAttribute('data-symmetric');
         symmetric.removeAttribute('style');
         el.innerHTML = 'Activate Symmetryc!';
@@ -20,14 +20,8 @@
         window.SYMMETRIC.init();
         _active = false;
       }
-
     }, true);
-
    }
 
-
    APP.init();
-
-}(window, undefined));
-
-console.log(window.SYMMETRIC);
+}(window, undefined)); 

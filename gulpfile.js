@@ -27,8 +27,10 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('src/'))
 });
 
+// gulp.task('build', ['ci', 'scrits'], function() {
+//   return gulp.src('examples/js/');
+// });
+
 gulp.task('default', ['server', 'ci', 'scripts'], function() {
-
   gulp.watch('src/symmetric.js', ['ci', 'scripts']);
-
 });
