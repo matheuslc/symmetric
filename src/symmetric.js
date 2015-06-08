@@ -75,7 +75,7 @@
     return this;
   };
 
-  document.addEventListener('load', _.init(), false);
+  document.addEventListener('DOMContentLoaded', _.init, false);
 
 }(window, document, undefined));
 
