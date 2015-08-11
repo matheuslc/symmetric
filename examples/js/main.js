@@ -9,19 +9,19 @@
         _active   = false;
 
     el.addEventListener('click', function() {
-      if (_active === false) {
+      if (_active) {
         symmetric.removeAttribute('data-symmetric');
         symmetric.removeAttribute('style');
         el.innerHTML = 'Activate Symmetryc!';
-        _active = true;
+        _active = false;
       } else {
         symmetric.setAttribute('data-symmetric', 'true');
         el.innerHTML = 'Deactivate Symmetryc!';
         window.SYMMETRIC.init();
-        _active = false;
+        _active = true;
       }
     }, true);
    }
 
    APP.init();
-}(window, undefined)); 
+}(window, undefined));
