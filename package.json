@@ -1,8 +1,8 @@
 {
   "name": "symmetric",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "A symmetric columns tool",
-  "main": "gulpfile.js",
+  "main": "src/symmetric.js",
   "directories": {
     "example": "examples"
   },
@@ -14,7 +14,7 @@
     "url": "https://github.com/matheuslc/symmetric.git"
   },
   "keywords": [
-    "semmetric",
+    "symmetric",
     "columns",
     "equalizer"
   ],

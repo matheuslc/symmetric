@@ -10,12 +10,10 @@
 
     el.addEventListener('click', function() {
       if (_active) {
-        symmetric.removeAttribute('data-symmetric');
         symmetric.removeAttribute('style');
         el.innerHTML = 'Activate Symmetryc!';
         _active = false;
       } else {
-        symmetric.setAttribute('data-symmetric', 'true');
         el.innerHTML = 'Deactivate Symmetryc!';
         window.SYMMETRIC.init();
         _active = true;

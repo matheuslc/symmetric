@@ -6,7 +6,9 @@ var gulp    = require('gulp'),
 
 
 gulp.task('server', function() {
-  connect.server();
+  connect.server({
+    port: 3001
+  });
 });
 
 gulp.task('ci', function() {

@@ -1,7 +1,7 @@
-/* Name Symmetric
+/* @name Symmetric
  * @author Matheus Lucca do Carmo (matheuslc)
  * @description Equalize the height of yours columns.
- * @version 0.0.2
+ * @version 1.0.1
  * @license MIT
 */
 
@@ -15,49 +15,50 @@
   var _ = SYMMETRIC;
 
   // Start the lib
-  _.init = function() {
-    var items  = _.getWatchers(),
-        height = _.getMaxHeight(items);
+  _.init = function(options) {
+    this.items   = _.getWatchers();
+    this.height  = _.getMaxHeight(this.items);
 
-    _.setWatchersHeight(items);
-    _.setHeight(height);
+    _.setWatchersHeight(this.items);
+    _.setHeight(this.height);
+
+    if (_.isResizable()) {
+      window.addEventListener('resize', _.init);
+    }
   };
 
   /* Get all elements that will be equalized
    * @param klass {string} Class name
-   * @return items {NodeList} NodeList with all elements
+   * @returns items {NodeList} NodeList with all elements
    */
   _.getWatchers = function(klass) {
-    var item  = klass,
-        items = '';
-
-    if (typeof item === 'undefined') {
-      item = '[data-symmetric-item]';
+    if (typeof klass === 'undefined') {
+      klass = '[data-symmetric-item]';
     }
 
-    // Get all items
-    items = document.querySelectorAll(item);
-
-    return items;
+    return document.querySelectorAll(klass);
   };
 
   /* Get the max height of all elements
    * @param list {NodeList} NodeList with all items (_.getWatchers)
-   * @return lastHeight {integer} The max height value
+   * @returns lastHeight {integer} The max height value
    */
   _.getMaxHeight = function(list) {
-    var heights = Array.prototype.map.call( list, function( item ) {
+     _.removeOldHeight()
+
+    var heights = Array.prototype.map.call(list, function(item) {
       return item.offsetHeight;
     });
 
-    return Math.max.apply( Math, heights );
+    return Math.max.apply(Math, heights);
   };
 
   /* Set the height of all elements
    * @param list {NodeList} NodeList with all items (_.getWatchers)
+   * @returns {This}
    */
   _.setWatchersHeight = function(list) {
-    Array.prototype.map.call( list, function( item ) {
+    Array.prototype.map.call(list, function(item) {
       item.style.height = 'inherit';
     });
 
@@ -66,15 +67,35 @@
 
   /* Set the height of root elements
    * @param height {integer} Max height value (_.getMaxHeight())
+   * @returns {This}
    */
   _.setHeight = function(height) {
-    Array.prototype.map.call( document.querySelectorAll('[data-symmetric]'), function( item ) {
-      item.style.height = height + 'px';
+    Array.prototype.map.call(
+      document.querySelectorAll('[data-symmetric]'), function(item) {
+        item.style.height = height + 'px';
+      }
+    );
+
+    return this;
+  };
+
+  /* Remove the oldest height of the element
+   * @returns {This}
+   */
+  _.removeOldHeight = function() {
+    Array.prototype.map.call(this.items, function(item) {
+        item.style.height = 'auto';
     });
 
     return this;
   };
 
-  document.addEventListener('load', _.init, false);
+  /* Check if user wants to listen resize event
+   * @returns {Boolean}
+   */
+  _.isResizable = function() {
+    return !!document.querySelector('[data-symmetric-resize]')
+  };
 
+  document.addEventListener('load', _.init, false);
 }(window, document, undefined));
