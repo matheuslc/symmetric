@@ -39,3 +39,6 @@ With Resize option
 ```
 
 [See an example](http://matheuslc.com/symmetric/examples/)
+
+
+Enjoy it!
